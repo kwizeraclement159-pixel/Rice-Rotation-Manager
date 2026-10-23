@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="rw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RiceRotationManager</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">🌾</div>
+
+        <div>
+            <h1>RiceRotationManager</h1>
+            <p>Gahunda yo gufata umuceri</p>
+        </div>
+    </header>
+
+    <nav class="navigation">
+        <button class="nav-btn active" data-page="home">
+            🏠<span>Ahabanza</span>
+        </button>
+
+        <button class="nav-btn" data-page="take">
+            🌾<span>Gufata umuceri</span>
+        </button>
+
+        <button class="nav-btn" data-page="messages">
+            💬<span>Ubutumwa</span>
+        </button>
+
+        <button class="nav-btn" data-page="history">
+            📋<span>Amateka</span>
+        </button>
+    </nav>
+
+    <main>
+
+        <!-- AHABANZA -->
+        <section id="home" class="page active">
+
+            <div class="welcome-card">
+                <h2>Murakaza neza!</h2>
+                <p>
+                    Hano ureba umuntu ufata umuceri uyu munsi
+                    n'uzawufata ubutaha.
+                </p>
+            </div>
+
+            <div class="today-card">
+                <p>UMUNTU UFATA UMUCERI UYU MUNSI</p>
+
+                <h2 id="todayPerson">Birimo kubarwa...</h2>
+
+                <p id="todayDate"></p>
+
+                <hr>
+
+                <p>Uzafata umuceri ubutaha:</p>
+
+                <h3 id="nextPerson">--</h3>
+            </div>
+
+            <div class="people-card">
+                <h3>Abantu basimburana</h3>
+
+                <div class="person">
+                    <span class="avatar">F</span>
+                    <div>
+                        <strong>Firomeni</strong>
+                        <p>Umuntu wa mbere</p>
+                    </div>
+                </div>
+
+                <div class="person">
+                    <span class="avatar">O</span>
+                    <div>
+                        <strong>Odeta</strong>
+                        <p>Umuntu wa kabiri</p>
+                    </div>
+                </div>
+
+                <div class="person">
+                    <span class="avatar">Z</span>
+                    <div>
+                        <strong>Zula</strong>
+                        <p>Umuntu wa gatatu</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- GUFATA UMUCERI -->
+        <section id="take" class="page">
+
+            <div class="section-heading">
+                <h2>🌾 Gufata umuceri</h2>
+                <p>Andika amakuru y'umuceri wafashwe.</p>
+            </div>
+
+            <form id="riceForm" class="form-card">
+
+                <label for="riceDate">Itariki</label>
+                <input
+                    type="date"
+                    id="riceDate"
+                    required
+                >
+
+                <label for="ricePerson">Uwafashe umuceri</label>
+                <select id="ricePerson" required>
+                    <option value="">Hitamo umuntu</option>
+                    <option value="Firomeni">Firomeni</option>
+                    <option value="Odeta">Odeta</option>
+                    <option value="Zula">Zula</option>
+                </select>
+
+                <label for="riceQuantity">Ingano y'umuceri (kg)</label>
+                <input
+                    type="number"
+                    id="riceQuantity"
+                    min="0.1"
+                    step="0.1"
+                    placeholder="Urugero: 5"
+                    required
+                >
+
+                <label for="riceNotes">Ibindi bisobanuro</label>
+                <textarea
+                    id="riceNotes"
+                    rows="3"
+                    placeholder="Andika ibisobanuro niba bihari..."
+                ></textarea>
+
+                <button type="submit" class="primary-btn">
+                    Bika amakuru
+                </button>
+
+                <p id="riceStatus" class="status-message"></p>
+
+            </form>
+
+        </section>
+
+        <!-- UBUTUMWA -->
+        <section id="messages" class="page">
+
+            <div class="chat-header">
+                <div class="chat-icon">💬</div>
+                <div>
+                    <h2>Ubutumwa</h2>
+                    <p>Ganira na Firomeni na Odeta</p>
+                </div>
+            </div>
+
+            <div class="sender-card">
+                <label for="personName">Izina ryawe</label>
+
+                <select id="personName" required>
+                    <option value="">Hitamo izina ryawe</option>
+                    <option value="Firomeni">Firomeni</option>
+                    <option value="Odeta">Odeta</option>
+                    <option value="Zula">Zula</option>
+                </select>
+            </div>
+
+            <div id="messagesList" class="messages-list">
+                <p class="empty-message">
+                    Ubutumwa buragaragara hano.
+                </p>
+            </div>
+
+            <form id="messageForm" class="message-form">
+
+                <textarea
+                    id="messageText"
+                    rows="2"
+                    placeholder="Andika ubutumwa..."
+                    required
+                ></textarea>
+
+                <button type="submit" id="sendMessage">
+                    Ohereza ➤
+                </button>
+
+            </form>
+
+            <p id="messageStatus" class="status-message"></p>
+
+        </section>
+
+        <!-- AMATEKA -->
+        <section id="history" class="page">
+
+            <div class="section-heading">
+                <h2>📋 Amateka yo gufata umuceri</h2>
+                <p>Reba amakuru yanditswe mbere.</p>
+            </div>
+
+            <div id="historyList" class="history-list">
+                <p class="empty-message">
+                    Nta makuru araboneka.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>RiceRotationManager © 2026</p>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
